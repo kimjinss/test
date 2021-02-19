@@ -30,7 +30,7 @@ app.post('/post', (req, res) => {
     });
 
     req.on('end', () => {
-        console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+        console.log("user_id : "+ inputData.id + " , name : "+inputData.name);
     });
 
     res.write("OK!");
