@@ -44,21 +44,20 @@ router.post('/post', (req, res) => {
         inputData = JSON.parse(data);
     });
 
-    req.on('end', () => {
-        console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
-    });
+    // req.on('end', () => {
+    //     console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+    // });
 
     query.on('end', () => {
         console.log(rows[0].user);
-        console.log('query done')
+        // console.log('query done')
         // res.send(rows[0].user);
         // res.status(200).end();
         res.write(rows[0].user);
         res.end();
     });
 
-    // res.write(rows[0].user);
-    // res.end();
+
 });
 
 
