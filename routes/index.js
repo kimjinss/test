@@ -27,13 +27,13 @@ const Query = require('pg').Query
 //     client.end()
 // });
 
-client.connect(err => {
-    if (err) {
-        console.error('connection error', err.stack)
-    } else {
-        console.log('success!')
-    }
-});
+// client.connect(err => {
+//     if (err) {
+//         console.error('connection error', err.stack)
+//     } else {
+//         console.log('success!')
+//     }
+// });
 
 
 
