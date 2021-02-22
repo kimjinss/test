@@ -55,7 +55,7 @@ client.connect(err => {
 
 router.post('/post', (req, res) => {
     console.log('who get in here post /users');
-    const query = new Query("SELECT * FROM category")
+    const query = new Query("SELECT * FROM user")
     client.query(query)
     var inputData;
     var rows = []; /** * row에서 데이터 가져오고 end에서 검색할 때 발생한 각종 정보, error는 오류 발생시 */
@@ -85,7 +85,7 @@ router.post('/post', (req, res) => {
         console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
     });
 
-    res.send(rows);
+    res.send(rows.user);
     res.status(200).end();
 });
 
