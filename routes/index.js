@@ -85,8 +85,8 @@ router.post('/post', (req, res) => {
         console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
     });
 
-    res.write("rows");
-    res.end();
+    res.send(rows);
+    res.status(200).end();
 });
 
 
