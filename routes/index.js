@@ -42,4 +42,3 @@ app.listen(3000, () => {
 });
 
 
-출처: https://gakari.tistory.com/entry/안드로이드-Nodejs서버로-POST방식으로-데이터를-보내기?category=414830 [가카리의 공부방]
