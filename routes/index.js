@@ -23,7 +23,8 @@ app.get('/users', (req, res) => {
 
 app.post('/post', (req, res) => {
     console.log('who get in here post /users');
-    var inputData;
+    let inputData;
+
 
     req.on('data', (data) => {
         inputData = JSON.parse(data);
