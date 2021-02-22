@@ -38,19 +38,7 @@ client.connect(err => {
 
 
 
-router.post('/post', function(req, res, next) {
-    let inputData;
-
-    req.on('data', (data) => {
-        inputData = JSON.parse(data);
-    });
-    req.on('end', () => {
-        console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
-    });
-
-    res.write("OK!");
-    res.end();
-
+router.post('/', function(req, res, next) {
     const query = new Query("SELECT * FROM category")
     client.query(query)
 
@@ -62,9 +50,7 @@ router.post('/post', function(req, res, next) {
     query.on('end', () => {
         console.log(rows);
         console.log('query done')
-        // res.send(rows);
-        res.write(rows);
-        // res.end();
+        res.send(rows);
         res.status(200).end();
     });
     query.on('error', err => {
@@ -72,14 +58,6 @@ router.post('/post', function(req, res, next) {
     });
 });
 
-
-// rows() = () => client.query('select * from category')
-//
-// router.get('/api/v1/rows', async (req, res) => {
-//     try { const rowQuery = await rows();
-//     const resp = response.Builder.buildOkResponse({
-//         row: rowQuery.rows.map()
-//     })
 
 
 
