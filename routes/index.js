@@ -65,12 +65,12 @@ router.post('/post', (req, res) => {
         rows.push(row);
     });
 
-    query.on('end', () => {
-        console.log(rows[0].user);
-        console.log('query done')
-        // res.send(rows);
-        // res.status(200).end();
-    });
+    // query.on('end', () => {
+    //     console.log(rows[0].user);
+    //     console.log('query done')
+    //     res.send(rows);
+    //     res.status(200).end();
+    // });
     query.on('error', err => {
         console.error(err.stack)
     });
@@ -82,7 +82,7 @@ router.post('/post', (req, res) => {
     });
 
     req.on('end', () => {
-        // console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+        console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
     });
 
     res.send(rows[0].user);
