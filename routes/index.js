@@ -51,12 +51,12 @@ router.post('/post', (req, res) => {
     query.on('end', () => {
         console.log(rows[0]);
         console.log('query done')
-        res.send(rows[0].user);
-        res.status(200).end();
+        // res.send(rows[0].user);
+        // res.status(200).end();
     });
 
-    // res.write("OK!");
-    // res.end();
+    res.write("OK!");
+    res.end();
 });
 
 
