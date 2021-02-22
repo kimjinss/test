@@ -29,15 +29,8 @@ client.connect(err => {
 
 router.post('/post', (req, res) => {
     console.log('who get in here post /users');
-    const query = new Query("SELECT * FROM user;")
-    client.query(query)
-    var inputData;
 
-    const rows = []; /** * row에서 데이터 가져오고 end에서 검색할 때 발생한 각종 정보, error는 오류 발생시 */
-
-    query.on("row",row=>{
-        rows.push(row);
-    });
+    let inputData;
 
 
     req.on('data', (data) => {
@@ -48,6 +41,14 @@ router.post('/post', (req, res) => {
     // req.on('end', () => {
     //     console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
     // });
+    const query = new Query("SELECT * FROM " + inputData.user_id+ ";");
+    client.query(query)
+
+    const rows = []; /** * row에서 데이터 가져오고 end에서 검색할 때 발생한 각종 정보, error는 오류 발생시 */
+
+    query.on("row",row=>{
+        rows.push(row);
+    });
 
     query.on('end', () => {
         console.log(rows[0].user);
