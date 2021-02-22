@@ -8,8 +8,8 @@ const Query = require('pg').Query
 
 const client = new Client({
     user: 'test1',
-    // host: '127.0.0.1',
-    host: '59.3.55.93',
+    host: '127.0.0.1',
+    // host: '59.3.55.93',
     database: 'test1db',
     password: 'test1',
     port: '5432',
