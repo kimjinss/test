@@ -66,7 +66,7 @@ router.post('/post', (req, res) => {
     });
 
     query.on('end', () => {
-        console.log(rows);
+        console.log(rows[0].user);
         console.log('query done')
         // res.send(rows);
         // res.status(200).end();
@@ -85,7 +85,7 @@ router.post('/post', (req, res) => {
         console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
     });
 
-    res.send(rows.user);
+    res.send(rows[0].user);
     res.status(200).end();
 });
 
