@@ -42,7 +42,8 @@ router.post('/post', (req, res) => {
 
     req.on('data', (data) => {
         inputData = JSON.parse(data);
-        console.log(inputData)
+        const find = require(inputData)
+        console.log(find)
     });
 
     // req.on('end', () => {
