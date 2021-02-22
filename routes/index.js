@@ -1,30 +1,46 @@
 const express = require('express');
+const { Client } = require('pg');
+const router = express.Router();
 const app = express();
+const Query = require('pg').Query
 
-let users = [
-    {
-        id: 1,
-        name: 'alice'
-    },
-    {
-        id: 2,
-        name: 'bek'
-    },
-    {
-        id: 3,
-        name: 'chris'
+
+
+// const client = new Client({
+//     user: 'test1',
+//     // host: '127.0.0.1',
+//     host: '59.3.55.93',
+//     database: 'test1db',
+//     password: 'test1',
+//     port: '5432',
+//     max: 10, // max number of clients in the pool
+//
+//     idleTimeoutMillis: 30000, // how long a client
+//
+// });
+
+
+// client.connect();
+//
+// client.query('SELECT NOW()', (err, res) => {
+//     console.log(err, res)
+//     client.end()
+// });
+
+client.connect(err => {
+    if (err) {
+        console.error('connection error', err.stack)
+    } else {
+        console.log('success!')
     }
-]
-
-app.get('/users', (req, res) => {
-    console.log('who get in here/users');
-    res.json(users)
 });
 
-app.post('/post', (req, res) => {
-    console.log('who get in here post /users');
-    let inputData;
 
+
+
+router.post('/post', (req, res) => {
+    console.log('who get in here post /users');
+    var inputData;
 
     req.on('data', (data) => {
         inputData = JSON.parse(data);
@@ -38,8 +54,8 @@ app.post('/post', (req, res) => {
     res.end();
 });
 
-app.listen(8080, () => {
-    console.log('Example app listening on port 8080!');
-});
 
 
+
+
+module.exports = router;
