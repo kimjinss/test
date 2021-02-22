@@ -4,18 +4,34 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app"
   },
-  "author": "test",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimjinss/html.git"
+  },
+  "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimjinss/html/issues"
+  },
+  "homepage": "https://github.com/kimjinss/html#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^3.1.6",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "nunjucks": "^3.2.1",
+    "pg": "^8.5.1",
+    "python-shell": "^2.0.3",
+    "sequelize": "^5.21.6",
+    "sequelize-cli": "^5.5.1",
     "socket.io": "^3.1.1"
-  },
-  "devDependencies": {
-    "cors": "^2.8.5",
-    "nodemon": "^2.0.7"
   }
 }
