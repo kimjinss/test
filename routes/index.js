@@ -42,6 +42,7 @@ router.post('/post', (req, res) => {
 
     req.on('data', (data) => {
         inputData = JSON.parse(data);
+        console.log(data)
     });
 
     // req.on('end', () => {
